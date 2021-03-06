@@ -38,10 +38,10 @@
 <script>
 	var map = L.map('map').setView([37.8, -96], 4);
 
-	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
-		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		// attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+		// 	'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 		id: 'mapbox/light-v9',
 		tileSize: 512,
 		zoomOffset: -1
@@ -64,7 +64,7 @@
 		// 	: 'Hover over a state');
 
 		this._div.innerHTML = '<h4>HEALTHCARE PROVIDER MAP</h4>' + (props ?
-		'<b>System:</b> ' + props.System + '<br />' + '<b>Facility:</b> ' + props.Facility + '<br />' + '<b>State:</b> ' + props.State : 'Hover for client info'
+		'<b>System:</b> ' + props.System + '<br />' + '<b>Facility:</b> ' + props.Facility + '<br />' + '<b>Helpline #:</b> ' + 'Coming soon...' : 'Hover for client info'
 		);
 
 	};
@@ -112,81 +112,81 @@
 	//get color depending on SYSTEM
 	function getColor(d) {
 		if (d === 'Agilon Health')
-    		return "#5CAEB3";
+    		return "#004b8d";
 		if (d === 'Ardent')
-    		return "#F2B9BE";
+    		return "#00437e";
 		if (d === "Ascension Health - Saint Louis, MO")
-			return "#93ACB5";
+			return "#003c70";
 		if (d === 'Austin Regional Clinic (ARC)')
-    		return "#FE328D";
+    		return "#003462";
 		if (d === 'Baptist Health Services Group')
-    		return "#666A57";
+    		return "#002d54";
 		if (d === 'Bon Secours')
-    		return "#6FB297";
+    		return "#195d98";
 		if (d === 'Carroll County Memorial Hospital')
-    		return "#A78F74";
+    		return "#326ea3";
 		if (d === "Catholic Health Initiatives")
-			return "#624763";
+			return "#4c81af";
 		if (d === 'CHI Franciscan Health')
-    		return "#7A6949";
+    		return "#6693ba";
 		if (d === 'CHI Health Nebraska/Iowa')
-    		return "#23291E";
+    		return "#7fa5c6";
 		if (d === 'CHI Texas Division')
-    		return "#6F7764";
+    		return "#99b7d1";
 		if (d === 'CHS')
-    		return "#91A095";
+    		return "#b2c9dc";
 		if (d === 'Dignity Health')
-    		return "#D63AF9";
+    		return "#ee3a43";
 		if (d === 'Eastside Health Alliance')
-    		return "#CBD0A5";
+    		return "#d6343c";
 		if (d === 'Emory Healthcare')
-    		return "#B3AF52";
+    		return "#be2e35";
 		if (d === 'EvergreenHealth')
-    		return "#8F4E33";
+    		return "#a6282e";
 		if (d === 'HCA - Nashville, TN')
-			return "#43C59E";
+			return "#8e2228";
 		if (d === 'Hospital Sisters Health System')
-    		return "#4A3043";
+    		return "#ef4d55";
 		if (d === 'Island Hospital')
-    		return "#61648B";
+    		return "#f16168";
 		if (d === 'LifePoint')
-    		return "#7C75A6";
+    		return "#f3757b";
 		if (d === 'Mercy')
-    		return "#4B4A42";
+    		return "#f4888e";
 		if (d === 'Mercy - Chicago')
-    		return "#855F45";
+    		return "#f69ca1";
 		if (d === 'Mosaic Life Care')
-    		return "#BEC65A";
+    		return "#f8b0b3";
 		if (d === 'MultiCare')
-    		return "#EEEAA2";
+    		return "#f9c3c6";
 		if (d === 'Northeast Georgia Health System')
-    		return "#1B1303";
+    		return "#ebab21";
 		if (d === 'Northwest Physicians Network (NPN)')
-    		return "#5A4609";
+    		return "#d3991d";
 		if (d === 'PeaceHealth')
-    		return "#827F31";
+    		return "#bc881a";
 		if (d === 'Presence Health')
-    		return "#A9861C";
+    		return "#a47717";
 		if (d === 'Prime Health - Ontario, CA')
-    		return "#BD9125";
+    		return "#ebab21";
 		if (d === "Saint Luke's Health System")
-    		return "#6D5948";
+    		return "#edb337";
 		if (d === 'Skagit Regional Health System')
-    		return "#97D9C1";
+    		return "#efbb4d";
 		if (d === 'Spartanburg Regional Healthcare System')
-    		return "#F3EFDE";
+    		return "#f1c463";
 		if (d === 'SSM Health Care')
-    		return "#AFBCAD";
+    		return "#f3cc79";
 		if (d === "St. Luke's Hospital")
-    		return "#3C342A";
+    		return "#f5d590";
 		if (d === 'Tenet Healthcare')
-    		return "#122F5F";
+    		return "#f7dda6";
 		if (d === 'Trinity Health')
-    		return "#2C9999";
+    		return "#004b8d";
 		if (d === 'Valley Health')
-    		return "#DCD2A4";
+    		return "#ee3a43";
 		if (d === 'Washington Regional Medical Center')
-    		return "#F0A553";
+    		return "#003462";
 	}
 
 	function style(feature) {
