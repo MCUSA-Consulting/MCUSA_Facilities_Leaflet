@@ -208,6 +208,8 @@
 
 		onEachFeature: onEachFeature,
 
+		filter: allFilter,
+
 		pointToLayer: function (feature, latlng) {
 			return L.circleMarker(latlng, {
 				radius: 8,
@@ -220,6 +222,12 @@
 		}
 	}).addTo(map);
 
+	function allFilter(feature) {
+		return feature.properties.Status !== "Future Prospects: 2020" 
+		&& feature.properties.Status !== "Future Prospects: 2021" 
+		&& feature.properties.Status !== "Proposal sent. Impl 2021" 
+
+	};
 
 </script>
 
